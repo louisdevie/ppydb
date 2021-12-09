@@ -2,20 +2,25 @@ from ppydb import *
 
 db = new_ppydb('example')
 
-db.create_table(
+print(db)
+
+table = db.create_table(
 	'table',
 	Int('id', AutoNum(), PrimaryKey()),
 	Str('lastname', NeverEmpty()),
 	Str('firstname')  )
 
-db.insert_values(
-	'table',
+print(table)
+
+table.insert_values(
 	(None, 'Stickmin', 'Henry'),
 	(None, 'Calvin', 'Charles'),
 	(None, 'Rose', 'Ellie')  )
 
-print(
-	db.table('table')
-	.select('l' in 'firstname')
-	.order_by('id', 'desc')
-	.project('firstname', 'lastname')  )
+print(db.query(table))
+
+query = table.select(Col('l') in 'firstname').sort_by('id', DESC).project('firstname', 'lastname')
+
+print(query.toSQL())
+
+print(db.query(query))

@@ -9,3 +9,6 @@ class PrimaryKey (BaseConstraint):
 		
 class NeverEmpty (BaseConstraint):
 	pass	
+
+class CheckIf (BaseConstraint):
+	pass
