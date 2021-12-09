@@ -1,1 +1,7 @@
+[![PyPI](https://img.shields.io/pypi/v/ppydb)](https://pypi.org/project/ppydb/)
+[![Documentation Status](https://readthedocs.org/projects/ppydb/badge/?version=latest)](https://ppydb.readthedocs.io/en/latest/?badge=latest)
+[![MIT license](https://img.shields.io/badge/license-MIT-yellowgreen)](https://github.com/louisdevie/ezcli/blob/main/LICENSE)
+[![Tests](https://github.com/louisdevie/ppydb/actions/workflows/coverage.yml/badge.svg)](https://github.com/louisdevie/ppydb/actions/workflows/coverage.yml)
+[![codecov](https://codecov.io/gh/louisdevie/ppydb/branch/main/graph/badge.svg)](https://codecov.io/gh/louisdevie/ppydb)
+[![code quality](https://img.shields.io/badge/code_quality-terrible-critical)](https://github.com/louisdevie/ezcli)
 # ![logo](ppydb_logo_flat.svg)
