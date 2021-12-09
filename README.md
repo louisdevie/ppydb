@@ -5,3 +5,28 @@
 [![codecov](https://codecov.io/gh/louisdevie/ppydb/branch/main/graph/badge.svg)](https://codecov.io/gh/louisdevie/ppydb)
 [![code quality](https://img.shields.io/badge/code_quality-terrible-critical)](https://github.com/louisdevie/ezcli)
 # ![logo](ppydb_logo_flat.svg)
+
+## Demo
+```python
+
+from ppydb import *
+
+db = new_ppydb('example')
+
+table = db.create_table(
+	'table',
+	Int('id', AutoNum(), PrimaryKey()),
+	Str('lastname', NeverEmpty()),
+	Str('firstname')  )
+
+table.insert_values(
+	(None, 'Stickmin', 'Henry'),
+	(None, 'Calvin', 'Charles'),
+	(None, 'Rose', 'Ellie')  )
+
+query = table.select(Col('l') in 'firstname').sort_by('id', DESC).project('firstname', 'lastname')
+
+print(query.toSQL())
+
+print(db.query(query))
+```
