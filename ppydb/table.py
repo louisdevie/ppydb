@@ -1,17 +1,14 @@
 class Table:
-	def __init__(self, name, schema=None, initial_cols=tuple()):
-		self._name = name
-		self._schema = schema
+    def __init__(self, name, database, columns):
+        self._name = name
+        self._database = database
+        self._columns = {col._name: col for col in columns}
 
-	def __str__(self):
-		if self._schema:
-			return f'<{self._schema._name}:{self._name}>'
-		else:
-			return f'<$:{self._name}>'
+    def __str__(self):
+        return f"<{self._database._name}:{self._name}>"
 
-	@property
-	def name(self):
-		return self._name
-
-	def insert_values(self, *values):
-		pass
+    def __getattr__(self, attr):
+        if attr.startswith("_"):
+            return object.__getattr__(self, attr)
+        else:
+            return self._columns[attr]

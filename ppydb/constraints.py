@@ -1,14 +1,18 @@
 class BaseConstraint:
-	pass
+    pass
 
-class AutoNum (BaseConstraint):
-	pass
 
-class PrimaryKey (BaseConstraint):
-	pass
-		
-class NeverEmpty (BaseConstraint):
-	pass	
+class AutoNum(BaseConstraint):
+    pass
 
-class CheckIf (BaseConstraint):
-	pass
+
+class PrimaryKey(BaseConstraint):
+    pass
+
+
+class NeverEmpty(BaseConstraint):
+    pass
+
+
+class CheckIf(BaseConstraint):
+    pass
